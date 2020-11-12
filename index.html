@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="public/images/favicon.svg" type="image/png">
+    <meta name="description" content="Pomodoro help you to focus on your task. you work and study more effectively" />
+    <meta name="keywords" content="pomodoro, countdown, pomodoro technique, tomato timer, pomodoro timer, online pomodoro timer,  pomodoro software timer, productivity tools, productivity, concentration techniques, pomodoro software">   
+    <title>Pomodoro</title>
+</head>
+<body>
+    <div style="text-align: center; font-weight: bold;">
+        Auto Play break <input type="checkbox" id="autoPlayBreak" class="switch" /><label class="label-switch" for="autoPlayBreak">Toggle</label>
+    </div>
+    <h1 id="title">Pomodoro Concentration</h1>
+    <h2 id="div-next"><span id="next">Next >></span></h2>
+
+
+    <div id="time"></div>
+    
+    <div id="div-btn">
+        <button id="reset" class="btn">Reset</button>
+        <button id="start" class="btn">Start</button>
+    </div>
+
+    <img src="public/images/volume-up.svg" alt="volume" id="volume" height="30px" style="cursor: pointer;">
+    <img src="public/images/setup.svg" id="setup" alt="setup" height="30px" style="cursor: pointer;">
+
+    <div style="display: none;">
+        <audio id="alarm">
+            <source src="public/sound/alarm.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <aside id="modalSetup" class="modal" aria-hidden="true" role="dialog" style="display: none;">
+        <div class="modal-wrapper js-stop-propagation">
+            <span class="js-close-modal">x</span>
+
+            <div class="alert" style="display: none;">Your settings have been saved.</div>
+
+            <div >
+                <div class="label">
+                    <label for="concentrate">Pomodoro duration (in minutes)</label>
+                </div>
+                <div class="input">
+                    <input type="number" id="concentrate" value="25" min="1"/>
+                </div>
+            </div>
+
+            <div>
+                <div class="label">
+                    <label for="short">Short break duration (in minutes)</label>
+                </div>
+                <div class="input">
+                    <input type="number" id="short" value="5" min="1">
+                </div>
+            </div>
+
+            <div>
+                <div class="label">
+                    <label for="long">Long break duration (in minutes)</label>
+                </div>
+                <div class="input">
+                    <input type="number" id="long" value="30" min="1">
+                </div>
+            </div>
+
+            <div>
+                <div class="label">
+                    <label for="step">Number of pomodoros</label>
+                </div>
+                <div class="input">
+                    <input type="number" id="step" value="4" min="1">
+                </div>
+            </div>
+            <div class="div-btn">
+                <button class="btn btn-md" id="default">Default</button>
+                <button class="btn btn-md" id="save">Save</button>
+            </div>
+        </div>
+    </aside>
+
+    <script type="application/javascript" src="public/bundle-2.js"></script>
+</body>
+</html>
